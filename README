@@ -3,7 +3,7 @@ NAME
     values
 
 VERSION
-    Version 0.01_01
+    Version 0.02
 
 SYNOPSIS
     A Net::SNMP mixin class for Dot1d base info.
@@ -38,7 +38,7 @@ SYNOPSIS
       }
 
 DESCRIPTION
-    This mixin supports basic switch information from the BRIDGE-MIB.
+    A mixin class for basic switch information from the BRIDGE-MIB.
 
     Besides the bridge address and the number of bridge ports, it's primary
     use is the mapping between dot1dBasePorts and ifIndexes.
@@ -88,6 +88,9 @@ PRIVATE METHODS
 
   _dot1d_base_ports_cb($session)
     The callback for _fetch_dot1d_base_ports.
+
+REQUIREMENTS
+    Net::SNMP, Net::SNMP::Mixin
 
 BUGS, PATCHES & FIXES
     There are no known bugs at the time of this release. However, if you

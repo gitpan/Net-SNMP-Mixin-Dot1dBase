@@ -1,6 +1,6 @@
 ---
 name: Net-SNMP-Mixin-Dot1dBase
-version: 0.01_01
+version: 0.02
 author:
   - 'Karl Gaissmaier <karl.gaissmaier (at) uni-ulm.de>'
 abstract: mixin class for the switch dot1d base values
@@ -18,7 +18,7 @@ build_requires:
 provides:
   Net::SNMP::Mixin::Dot1dBase:
     file: lib/Net/SNMP/Mixin/Dot1dBase.pm
-    version: 0.01_01
+    version: 0.02
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

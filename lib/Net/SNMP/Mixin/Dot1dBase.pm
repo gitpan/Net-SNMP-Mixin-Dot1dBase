@@ -53,11 +53,11 @@ Net::SNMP::Mixin::Dot1dBase - mixin class for the switch dot1d base values
 
 =head1 VERSION
 
-Version 0.01_01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -95,7 +95,7 @@ A Net::SNMP mixin class for Dot1d base info.
 
 =head1 DESCRIPTION
 
-This mixin supports basic switch information from the BRIDGE-MIB.
+A mixin class for basic switch information from the BRIDGE-MIB.
 
 Besides the bridge address and the number of bridge ports, it's primary use is the mapping between dot1dBasePorts and ifIndexes.
 
@@ -325,6 +325,10 @@ sub _dot1d_base_ports_cb {
 
   $session->{$prefix}{__initialized}++;
 }
+
+=head1 REQUIREMENTS
+
+L<< Net::SNMP >>, L<< Net::SNMP::Mixin >>
 
 =head1 BUGS, PATCHES & FIXES
 
