@@ -53,11 +53,11 @@ Net::SNMP::Mixin::Dot1dBase - mixin class for the switch dot1d base values
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -207,7 +207,7 @@ sub _init {
   die "$prefix already initalized and reload not forced.\n"
   	if $session->{$prefix}{__initialized} && not $reload;
 
-  # initialize the object for forwarding databases infos
+  # initialize the object for dot1dbase infos
   _fetch_dot1d_base($session);
   return if $session->error;
 

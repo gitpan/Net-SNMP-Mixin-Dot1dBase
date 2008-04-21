@@ -16,7 +16,7 @@ plan tests => 14;
 #plan 'no_plan';
 
 my ( $session, $error ) =
-  Net::SNMP->session( hostname => '0.0.0.0', retries => 0, timeout => 1, );
+  Net::SNMP->session( hostname => '127.0.0.1', retries => 0, timeout => 1, );
 
 ok( !$error, 'snmp session created without error' );
 isa_ok( $session, 'Net::SNMP' );
@@ -52,7 +52,7 @@ undef $session;
 
 # tests with nonblocking session
 ( $session, $error ) = Net::SNMP->session(
-  hostname    => '0.0.0.0',
+  hostname    => '127.0.0.1',
   nonblocking => 1,
   retries     => 0,
   timeout     => 1,

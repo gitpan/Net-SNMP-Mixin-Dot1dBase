@@ -1,5 +1,8 @@
 Revision history for Net-SNMP-Mixin-Dot1dBase
 
+0.03	Mo 21. Apr 17:52:38 CEST 2008
+	changed tests from 0.0.0.0 to 127.0.0.1
+
 0.02	Mon Apr 14 23:10:34 CEST 2008
 	minor pod corrections
 	fixed wrong test skip count
