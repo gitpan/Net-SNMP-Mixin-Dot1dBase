@@ -1,5 +1,9 @@
 Revision history for Net-SNMP-Mixin-Dot1dBase
 
+0.04	Fr 25. Apr 19:39:21 CEST 2008
+	no interface change
+	internal optimization
+
 0.03	Mo 21. Apr 17:52:38 CEST 2008
 	changed tests from 0.0.0.0 to 127.0.0.1
 

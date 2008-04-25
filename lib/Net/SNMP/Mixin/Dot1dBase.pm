@@ -53,11 +53,11 @@ Net::SNMP::Mixin::Dot1dBase - mixin class for the switch dot1d base values
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -118,13 +118,11 @@ sub get_dot1d_base_group {
   Carp::croak "'$prefix' not initialized,"
     unless $session->{$prefix}{__initialized};
 
-  my $result = {};
+  my $result = { %{ $session->{$prefix}{dot1dBase} } };
 
+  # normalize the MAC address
   $result->{dot1dBaseBridgeAddress} =
-    normalize_mac( $session->{$prefix}{dot1dBaseBridgeAddress} );
-
-  $result->{dot1dBaseNumPorts}      = $session->{$prefix}{dot1dBaseNumPorts};
-  $result->{dot1dBaseType}          = $session->{$prefix}{dot1dBaseType};
+    normalize_mac( $result->{dot1dBaseBridgeAddress} );
 
   return $result;
 }
@@ -268,13 +266,13 @@ sub _dot1d_base_cb {
 
   return unless defined $vbl;
 
-  $session->{$prefix}{dot1dBaseBridgeAddress} =
+  $session->{$prefix}{dot1dBase}{dot1dBaseBridgeAddress} =
     $vbl->{DOT1D_BASE_BRIDGE_ADDRESS()};
 
-  $session->{$prefix}{dot1dBaseNumPorts} =
+  $session->{$prefix}{dot1dBase}{dot1dBaseNumPorts} =
     $vbl->{DOT1D_BASE_NUM_PORTS()};
 
-  $session->{$prefix}{dot1dBaseType} =
+  $session->{$prefix}{dot1dBase}{dot1dBaseType} =
     $vbl->{DOT1D_BASE_TYPE() };
 
   $session->{$prefix}{__initialized}++;
